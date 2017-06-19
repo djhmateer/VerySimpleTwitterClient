@@ -23,7 +23,7 @@ namespace VerySimpleTwitterClient
     {
         string filteredUrl = @"https://stream.twitter.com/1.1/statuses/filter.json";
 
-        // *** PUT IN YOUR KEYS HERE ****
+        // *** PUT IN YOUR KEYS HERE - get from http://apps.twitter.com ****
         string consumerKey = "DdIGMxxxxxxxxxx";
         string consumerSecret = "ELzyK85xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         string accessToken = "11309782-s2LPhVyHxxxxxxxxxxxxxxxxxxxxxxxxx";
@@ -82,9 +82,10 @@ namespace VerySimpleTwitterClient
                                     var json = reader.ReadLine();
 
                                     if (!string.IsNullOrEmpty(json))
-                                        Console.WriteLine(json.Substring(0, Math.Min(json.Length, 250)));
+                                        Console.WriteLine(json.Substring(109, Math.Min(json.Length, 80)));
 
-                                    DoSomething(json);
+                                    Console.WriteLine();
+                                    //DoSomething(json);
                                 }
                             }
                         }
